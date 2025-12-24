@@ -1,364 +1,127 @@
-<section id="narzedzia" class="py-24 bg-base-200">
+---
+// Dane narzędzi - możesz je łatwo edytować w jednym miejscu
+const tools = [
+  {
+    badge: "Elements",
+    badgeClass: "badge-primary",
+    colorClass: "text-primary",
+    iconAnimation: "group-hover:rotate-12 group-hover:scale-110",
+    title: "HTML Inspector",
+    features: ["Live DOM editing", "Accessibility tree"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>`,
+  },
+  {
+    badge: "Styles",
+    badgeClass: "badge-secondary",
+    colorClass: "text-secondary",
+    iconAnimation: "group-hover:-rotate-12 group-hover:brightness-125",
+    title: "CSS Debugger",
+    features: ["Computed styles", "Flexbox/Grid inspectors"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>`,
+  },
+  {
+    badge: "Network",
+    badgeClass: "badge-accent",
+    colorClass: "text-accent",
+    iconAnimation: "group-hover:animate-pulse",
+    title: "Network Analyzer",
+    features: ["Waterfall analysis", "Throttling simulation"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+  },
+  {
+    badge: "Overrides",
+    badgeClass: "badge-primary",
+    colorClass: "text-primary",
+    iconAnimation: "group-hover:-translate-y-2",
+    title: "Local Overrides",
+    features: ["Persistent changes", "Mock API responses"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>`,
+  },
+  {
+    badge: "Recorder",
+    badgeClass: "badge-secondary",
+    colorClass: "text-secondary",
+    isRecorder: true, // Specjalna flaga dla animacji kropki
+    title: "User Flow Recorder",
+    features: ["Automated testing", "Puppeteer exports"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>`,
+  },
+  {
+    badge: "Console",
+    badgeClass: "badge-accent",
+    colorClass: "text-accent",
+    iconAnimation: "animate-float-on-hover",
+    title: "Advanced Debugger",
+    features: ["Conditional breakpoints", "Live expressions"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>`,
+  },
+];
+---
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+  .animate-float-on-hover {
+    transition: transform 0.3s ease;
+  }
+  .group:hover .animate-float-on-hover {
+    animation: float 2s ease-in-out infinite;
+  }
+</style>
+
+<section id="narzedzia" class="py-24 bg-base-200/50">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-4xl font-black text-center mb-4 tracking-tighter">
-      Poznaj kluczowe narzędzia Chrome DevTools
-    </h2>
-    <p class="text-lg text-center mb-16 opacity-70
-max-w-3xl mx-auto">
-      Opanuj funkcje, które odróżniają profesjonalistów od amatorów
-    </p>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div
-        class="card bg-base-100 border border-base-300 shadow-sm
-hover:shadow-md transition-shadow"
-      >
-        <div class="card-body p-6">
-          <div class="badge badge-primary badge-outline mb-3">Elements</div>
-          <h3 class="card-title text-lg font-bold">HTML Inspector</h3>
-          <ul class="text-sm
-opacity-70 space-y-2 mt-3">
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4
-w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414
-0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Live DOM editing</span>
-            </li>
-            <li class="flex
-items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010
-1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0
-011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Accessibility tree</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707
-5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8
-12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Event listeners</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- CSS Panel -->
-      <div
-        class="card
-bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-shadow"
-      >
-        <div class="card-body p-6">
-          <div class="badge badge-secondary badge-outline
-mb-3">Styles</div>
-          <h3 class="card-title text-lg font-bold">CSS Debugger</h3>
-          <ul class="text-sm opacity-70 space-y-2 mt-3">
-            <li class="flex items-start
-gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0
-0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0
-01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Computed styles analysis</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707
-5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8
-12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Flexbox/Grid inspectors</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20
-20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0
-01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Layer panel mastery</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Network Panel -->
-      <div
-        class="card bg-base-100 border
-border-base-300 shadow-sm hover:shadow-md transition-shadow"
-      >
-        <div class="card-body p-6">
-          <div class="badge badge-accent badge-outline
-mb-3">Network</div>
-          <h3 class="card-title text-lg font-bold">Network Analyzer</h3>
-          <ul class="text-sm opacity-70 space-y-2 mt-3">
-            <li class="flex
-items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010
-1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0
-011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Waterfall analysis</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707
-5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8
-12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Request blocking</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4
-text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414
-0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Throttling simulation</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Overrides -->
-      <div
-        class="card bg-base-100 border
-border-base-300 shadow-sm hover:shadow-md transition-shadow"
-      >
-        <div class="card-body p-6">
-          <div class="badge badge-primary badge-outline
-mb-3">Overrides</div>
-          <h3 class="card-title text-lg font-bold">Local Overrides</h3>
-          <ul class="text-sm opacity-70 space-y-2 mt-3">
-            <li class="flex
-items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010
-1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0
-011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Persistent CSS/JS changes</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success
-mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0
-011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Mock API responses</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20
-20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0
-01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Network request editing</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Recorder -->
-      <div
-        class="card bg-base-100 border
-border-base-300 shadow-sm hover:shadow-md transition-shadow"
-      >
-        <div class="card-body p-6">
-          <div class="badge badge-secondary badge-outline
-mb-3">Recorder</div>
-          <h3 class="card-title text-lg font-bold">User Flow Recorder</h3>
-          <ul class="text-sm opacity-70 space-y-2 mt-3">
-            <li class="flex
-items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010
-1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0
-011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Automated testing flows</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success
-mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0
-011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Performance measurement</span>
-            </li>
-            <li class="flex items-start
-gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0
-0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0
-01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Puppeteer script generation</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div
-        class="card bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-shadow"
-      >
-        <div class="card-body p-6">
-          <div class="badge badge-accent badge-outline mb-3">Console</div>
-          <h3 class="card-title text-lg font-bold">Advanced Debugger</h3>
-          <ul class="text-sm opacity-70 space-y-2 mt-3">
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Conditional breakpoints</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Live expressions monitoring</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="h-4 w-4 text-success mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Logpoints (no-code logging)</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="mt-16 text-center">
-      <p class="text-lg
-opacity-70 italic max-w-3xl mx-auto">
-        Ponad 90% deweloperów używa tylko 10% możliwości Chrome DevTools. Na tym
-        szkoleniu poznasz pozostałe 90%.
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">
+        Poznaj kluczowe narzędzia <span class="text-primary"
+          >Chrome DevTools</span
+        >
+      </h2>
+      <p class="text-lg opacity-70 max-w-2xl mx-auto">
+        Opanuj funkcje, które odróżniają profesjonalistów od amatorów.
       </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        tools.map((tool) => (
+          <div class="group card bg-base-100 border border-base-300 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="card-body p-8">
+              <div class="flex justify-between items-start mb-4">
+                <div class={`badge ${tool.badgeClass} badge-outline font-bold`}>
+                  {tool.badge}
+                </div>
+                <div
+                  class={`relative ${tool.colorClass} transition-all duration-300 ${tool.iconAnimation || ""}`}
+                >
+                  <Fragment set:html={tool.icon} />
+                  {tool.isRecorder && (
+                    <span class="absolute -top-1 -right-1 h-3 w-3 bg-error rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
+                  )}
+                </div>
+              </div>
+
+              <h3 class="card-title text-xl font-bold">{tool.title}</h3>
+
+              <ul class="mt-4 space-y-3">
+                {tool.features.map((feature) => (
+                  <li class="flex items-center gap-3 text-sm opacity-80">
+                    <span class="h-1.5 w-1.5 rounded-full bg-success" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

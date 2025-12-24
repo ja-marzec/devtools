@@ -1,89 +1,112 @@
-<section class="py-24 bg-base-200/50">
+---
+const roles = [
+  {
+    number: "01",
+    title: "Frontend Dev",
+    description:
+      "Opanuj narzędzia, dzięki którym <span class='text-primary font-bold'>współpraca z Backendem</span> stanie się formalnością. Przestań czekać na gotowe endpointy.",
+    colorClass: "hover:bg-primary/5",
+    textClass: "text-primary",
+    bgClass: "group-hover:bg-primary",
+    contentClass: "group-hover:text-primary-content",
+  },
+  {
+    number: "02",
+    title: "Backend Dev",
+    description:
+      "Koniec z <span class='italic'>\"u mnie działa\"</span>. Debuguj nagłówki i analizuj payload <span class='text-info font-bold'>bez otwierania Postmana</span>.",
+    colorClass: "hover:bg-info/5",
+    textClass: "text-info",
+    bgClass: "group-hover:bg-info",
+    contentClass: "group-hover:text-info-content",
+  },
+  {
+    number: "03",
+    title: "QA / Tester",
+    description:
+      "Zmień \"nie działa\" w profesjonalną diagnostykę. Wyciągaj dane, które <span class='text-secondary font-bold'>ułatwią wykrycie</span> i szybką naprawę bugów.",
+    colorClass: "hover:bg-secondary/5",
+    textClass: "text-secondary",
+    bgClass: "group-hover:bg-secondary",
+    contentClass: "group-hover:text-secondary-content",
+  },
+  {
+    number: "04",
+    title: "PO / UI / UX",
+    description:
+      "Mockuj pomysły bezpośrednio w przeglądarce. Sprawdź, jak produkt radzi sobie na <span class='text-accent font-bold '>low-endowych</span> urządzeniach.",
+    colorClass: "hover:bg-accent/5",
+    textClass: "text-accent",
+    bgClass: "group-hover:bg-accent",
+    contentClass: "group-hover:text-accent-content",
+  },
+];
+---
+
+<section class="py-24 bg-base-100 text-base-content overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-black text-center mb-16 tracking-tight">
-      Kogo zapraszamy na pokład?
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="card bg-base-100 shadow-sm border border-base-300">
-        <figure class="px-8 pt-8 text-primary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-12 w-12"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            ></path></svg
-          >
-        </figure>
-
-        <div class="card-body items-center text-center">
-          <h2 class="card-title font-black">Frontend Developer</h2>
-
-          <p class="text-sm opacity-70">
-            Opanujesz Layout Shift, z-index hell i nauczysz się debugować
-            frameworki (React/Vue) prosto w Sources.
-          </p>
-        </div>
+    <div
+      class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"
+    >
+      <div class="max-w-xl">
+        <h2 class="text-5xl font-black tracking-tighter uppercase italic">
+          Kogo zapraszamy?
+        </h2>
+        <div class="h-1.5 w-24 bg-primary mt-4"></div>
       </div>
+      <p class="text-xl opacity-50 font-mono font-medium lowercase">
+        // Wybierz swoją rolę
+      </p>
+    </div>
 
-      <div class="card bg-base-100 shadow-sm border border-base-300">
-        <figure class="px-8 pt-8 text-secondary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-12 w-12"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-            ></path></svg
+    <div class="divide-y divide-base-300 border-t border-b border-base-300">
+      {
+        roles.map((role) => (
+          <div
+            class={`group py-12 transition-all duration-500 ${role.colorClass} px-6 -mx-6 grid md:grid-cols-12 items-center gap-8 cursor-default`}
           >
-        </figure>
+            <div
+              class={`md:col-span-1 opacity-40 group-hover:opacity-100 transition-opacity font-mono text-2xl ${role.textClass}`}
+            >
+              {role.number}
+            </div>
 
-        <div class="card-body items-center text-center">
-          <h2 class="card-title font-black">QA / Tester</h2>
+            <div class="md:col-span-4">
+              <h3 class="text-3xl font-black uppercase group-hover:translate-x-3 transition-transform duration-300 tracking-tighter">
+                {role.title}
+              </h3>
+            </div>
 
-          <p class="text-sm opacity-70">
-            Dowiesz się jak wyciągać stack trace błędów, modyfikować API na
-            poczekaniu i symulować trudne warunki sieciowe.
-          </p>
-        </div>
-      </div>
+            <div class="md:col-span-5">
+              <p
+                class="text-lg opacity-70 group-hover:opacity-100 transition-opacity leading-relaxed"
+                set:html={role.description}
+              />
+            </div>
 
-      <div class="card bg-base-100 shadow-sm border border-base-300">
-        <figure class="px-8 pt-8 text-accent">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-12 w-12"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
-          >
-        </figure>
-
-        <div class="card-body items-center text-center">
-          <h2 class="card-title font-black">Performance Engineer</h2>
-
-          <p class="text-sm opacity-70">
-            Nauczysz się czytać Flame Charts, znajdować "Long Tasks" i
-            optymalizować Core Web Vitals pod SEO.
-          </p>
-        </div>
-      </div>
+            <div class="md:col-span-2 flex justify-end">
+              <div
+                class={`cursor-pointer w-12 h-12 rounded-full border border-base-300 flex items-center justify-center transition-all transform group-hover:rotate-45 ${role.bgClass} ${role.contentClass}`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

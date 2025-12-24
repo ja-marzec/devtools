@@ -1,51 +1,133 @@
-<section id="trener" class="py-24 bg-base-200">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row gap-24 items-center">
-      <div class="md:w-1/3">
-        <div
-          class="avatar shadow-2xl rounded-3xl overflow-hidden rotate-3 hover:rotate-0 transition-transform duration-500"
-        >
-          <img
-            src="https://picsum.photos/1200/1600"
-            class="bg-primary/20 w-full aspect-square"
-            alt="Trener"
-          />
-        </div>
-      </div>
-      <div class="md:w-2/3">
-        <div class="badge badge-primary font-bold mb-4">Twój Instruktor</div>
-        <h2 class="text-4xl font-black mb-6 tracking-tight">
-          Piotr "Debuger" Kowalski
-        </h2>
-        <p class="text-lg opacity-80 mb-6 leading-relaxed">
-          Od 12 lat optymalizuje największe systemy e-commerce w Polsce. Jako <strong
-            >Senior Frontend Engineer</strong
-          > spędziłem tysiące godzin w panelu Chrome DevTools, rozwiązując problemy,
-          które inni uznawali za "niemożliwe do naprawienia".
-        </p>
-        <div class="grid grid-cols-2 gap-4 mb-8">
-          <div class="flex items-center gap-2">
-            <div class="badge badge-outline badge-sm">50+ Szkoleń</div>
+<section id="trener" class="py-24 bg-base-200 relative overflow-hidden">
+  <div
+    class="absolute top-1/4 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
+  >
+  </div>
+  <div
+    class="absolute bottom-1/4 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="flex flex-col lg:flex-row gap-16 items-center">
+      <div class="w-full lg:w-2/5 flex justify-center">
+        <div class="relative group">
+          <div
+            class="absolute -inset-4 border-2 border-dashed border-primary/30 rounded-[2rem] group-hover:rotate-3 transition-transform duration-500"
+          >
           </div>
-          <div class="flex items-center gap-2">
-            <div class="badge badge-outline badge-sm">Google Expert</div>
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="badge badge-outline badge-sm">
-              Open Source Contributor
+
+          <div
+            class="relative avatar shadow-2xl rounded-3xl overflow-hidden -rotate-3 group-hover:rotate-0 transition-all duration-500 ring-4 ring-base-100"
+          >
+            <img
+              src="https://picsum.photos/1200/1600"
+              class="w-full h-auto max-w-sm object-cover aspect-[3/4] grayscale group-hover:grayscale-0 transition-all duration-700"
+              alt="Piotr Kowalski"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6"
+            >
+              <span class="text-white font-bold tracking-wider"
+                >#CHROME_EXPERT</span
+              >
             </div>
           </div>
-          <div class="flex items-center gap-2">
-            <div class="badge badge-outline badge-sm">Speaker @ JSConf</div>
-          </div>
         </div>
-        <!-- <div class="chat chat-start">
-          <div
-            class="chat-bubble bg-base-100 text-base-content  shadow-sm"
-          >
+      </div>
+
+      <div class="w-full lg:w-3/5">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm mb-6 border border-primary/20"
+        >
+          <span class="relative flex h-2 w-2">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+            ></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+            ></span>
+          </span>
+          Twój Instruktor
+        </div>
+
+        <h2 class="text-5xl font-black mb-6 tracking-tight leading-none">
+          Piotr <span class="text-primary italic">"Debuger"</span> Kowalski
+        </h2>
+
+        <p
+          class="text-xl opacity-80 mb-8 leading-relaxed max-w-2xl text-pretty"
+        >
+          Od 12 lat optymalizuje największe systemy e-commerce w Polsce. Jako <span
+            class="text-base-content font-bold underline decoration-primary decoration-2 underline-offset-4"
+            >Senior Frontend Engineer</span
+          > spędziłem tysiące godzin w panelu Chrome DevTools, rozwiązując problemy,
+          które inni uznawali za niemożliwe.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+          {
+            [
+              {
+                label: "50+ Szkoleń",
+                icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+              },
+              {
+                label: "Google Expert",
+                icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-1.354 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946 1.354 3.42 3.42 0 013.13 3.13 3.42 3.42 0 001.354 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-1.354 1.946 3.42 3.42 0 01-3.13 3.13 3.42 3.42 0 00-1.946 1.354 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-1.354 3.42 3.42 0 01-3.13-3.13 3.42 3.42 0 00-1.354-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 001.354-1.946 3.42 3.42 0 013.13-3.13z",
+              },
+              {
+                label: "Open Source",
+                icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+              },
+              {
+                label: "Speaker @ JSConf",
+                icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z",
+              },
+            ].map((stat) => (
+              <div class="flex items-center gap-3 p-3 rounded-2xl bg-base-100/50 border border-base-300 hover:border-primary/50 transition-colors group/stat">
+                <div class="p-2 rounded-lg bg-base-100 text-primary shadow-sm group-hover/stat:scale-110 transition-transform">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d={stat.icon}
+                    />
+                  </svg>
+                </div>
+                <span class="font-bold text-sm uppercase tracking-wider opacity-70 group-hover/stat:opacity-100">
+                  {stat.label}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+
+        <div
+          class="relative p-6 rounded-2xl bg-primary text-primary-content font-medium overflow-hidden"
+        >
+          <div class="absolute -right-4 -bottom-4 opacity-10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-24 w-24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.154c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+              ></path></svg
+            >
+          </div>
+          <p class="relative z-10 text-lg italic leading-snug">
             "Moim celem nie jest nauczenie Cię 'gdzie klikać', ale pokazanie Ci
             jak przeglądarka myśli pod spodem."
-          </div> -->
+          </p>
+        </div>
       </div>
     </div>
   </div>

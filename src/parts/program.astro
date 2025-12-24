@@ -1,120 +1,90 @@
-<section id="program" class="py-24 bg-base-100">
+---
+const schedule = [
+  {
+    title: "DOM, CSS & UX Audit",
+    description:
+      "Opanowanie paneli Elements, Layers oraz Rendering. Szukanie nieużywanych stylów i optymalizacja layoutu bez odświeżania strony.",
+    icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z",
+    done: true,
+  },
+  {
+    title: "JavaScript Sources Mastery",
+    description:
+      "Debugger, Breakpoints, Call Stack. Jak przejąć kontrolę nad stanem aplikacji w locie i modyfikować zmienne bez edycji kodu źródłowego.",
+    icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z",
+    done: true,
+  },
+  {
+    title: "Network & Performance",
+    description:
+      "Analiza Waterfall, symulacja lagów, Web Vitals i Memory Leaks. Rozwiązywanie problemów, które 'dzieją się tylko na słabych telefonach'.",
+    icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z",
+    done: true,
+  },
+  {
+    title: "Case Studies & Q&A",
+    description:
+      "Wspólna analiza problemów z Waszych projektów. Praktyczne porady i zamknięcie warsztatu.",
+    icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z",
+    done: false,
+  },
+];
+---
+
+<section id="program" class="py-24 bg-base-100 overflow-hidden">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-4xl font-black text-center mb-20 tracking-tighter">
-      Harmonogram Dnia
-    </h2>
+    <div class="flex flex-col items-center mb-16">
+      <h2
+        class="text-4xl md:text-5xl font-black text-center tracking-tighter mb-4"
+      >
+        Program Warsztatu
+      </h2>
+      <div class="h-1.5 w-20 bg-primary rounded-full"></div>
+    </div>
 
     <ul
       class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
     >
-      <li>
-        <div class="timeline-middle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="h-5 w-5 text-primary"
-            ><path
-              fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-              clip-rule="evenodd"></path></svg
-          >
-        </div>
+      {
+        schedule.map((item, index) => (
+          <li>
+            {index !== 0 && <hr class={item.done ? "bg-primary" : ""} />}
 
-        <div class="timeline-start md:text-end mb-10">
-          <time class="font-mono italic opacity-50">10:00 - 11:30</time>
+            <div class="timeline-middle">
+              <div
+                class={`p-1 rounded-full ${item.done ? "text-primary" : "opacity-30"}`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path fill-rule="evenodd" d={item.icon} clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
 
-          <div class="text-xl font-black">DOM, CSS & UX Audit</div>
+            <div
+              class={`${index % 2 === 0 ? "timeline-start md:text-end" : "timeline-end"} mb-12`}
+            >
+              <div class="text-xs font-bold tracking-widest uppercase opacity-40 mb-1">
+                Moduł 0{index + 1}
+              </div>
+              <div class="text-2xl font-black text-base-content mb-2 italic tracking-tight">
+                {item.title}
+              </div>
+              <p class="text-base-content/70 leading-relaxed max-w-md mx-auto md:mx-0">
+                {item.description}
+              </p>
+            </div>
 
-          Opanowanie paneli Elements, Layers oraz Rendering. Szukanie
-          nieużywanych stylów i optymalizacja layoutu bez odświeżania strony.
-        </div>
-
-        <hr class="bg-primary" />
-      </li>
-
-      <li>
-        <hr class="bg-primary" />
-
-        <div class="timeline-middle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="h-5 w-5 text-primary"
-            ><path
-              fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-              clip-rule="evenodd"></path></svg
-          >
-        </div>
-
-        <div class="timeline-end mb-10">
-          <time class="font-mono italic opacity-50">11:45 - 13:15</time>
-
-          <div class="text-xl font-black">JavaScript Sources Mastery</div>
-
-          Debugger, Breakpoints, Call Stack. Jak przejąć kontrolę nad stanem
-          aplikacji w locie i modyfikować zmienne bez edycji kodu źródłowego.
-        </div>
-
-        <hr class="bg-primary" />
-      </li>
-
-      <li>
-        <hr class="bg-primary" />
-
-        <div class="timeline-middle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="h-5 w-5 text-primary"
-            ><path
-              fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-              clip-rule="evenodd"></path></svg
-          >
-        </div>
-
-        <div class="timeline-start md:text-end mb-10">
-          <time class="font-mono italic opacity-50">14:00 - 15:30</time>
-
-          <div class="text-xl font-black">Network & Performance</div>
-
-          Analiza Waterfall, symulacja lagów, Web Vitals i Memory Leaks.
-          Rozwiązywanie problemów, które "dzieją się tylko na słabych
-          telefonach".
-        </div>
-
-        <hr />
-      </li>
-
-      <li>
-        <hr />
-
-        <div class="timeline-middle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="h-5 w-5"
-            ><path
-              fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-              clip-rule="evenodd"></path></svg
-          >
-        </div>
-
-        <div class="timeline-end mb-10">
-          <time class="font-mono italic opacity-50">15:30 - 16:00</time>
-
-          <div class="text-xl font-black">Case Studies & Q&A</div>
-
-          Wspólna analiza problemów z Waszych projektów. Praktyczne porady i
-          zamknięcie warsztatu.
-        </div>
-      </li>
+            {index !== schedule.length - 1 && (
+              <hr class={item.done ? "bg-primary" : ""} />
+            )}
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>

@@ -1,99 +1,194 @@
-<section id="dlaczego" class="py-24 bg-base-100">
+<section id="dlaczego" class="py-24 bg-base-100 overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row gap-16 items-center">
-      <div class="md:w-1/2">
-        <h2 class="text-4xl font-black mb-8 tracking-tighter">
-          Debugowanie to nie zgadywanka. <br /><span class="text-primary italic"
-            >To nauka.</span
-          >
+    <div class="flex flex-col lg:flex-row gap-16 items-center">
+      <div class="lg:w-1/2">
+        <div
+          class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-mono font-bold mb-6 uppercase tracking-[0.2em]"
+        >
+          Dlaczego warto?
+        </div>
+        <h2
+          class="text-4xl md:text-5xl font-black mb-8 tracking-tighter leading-[1.1]"
+        >
+          Zmień gaszenie pożarów w <br />
+          <span class="text-primary italic">przewidywalny proces.</span>
         </h2>
 
-        <div class="space-y-4">
-          <div class="alert shadow-sm border border-base-200 bg-base-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="stroke-error shrink-0 w-6 h-6"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path></svg
+        <div class="space-y-2">
+          <div
+            class="group flex items-start gap-4 p-5 rounded-2xl border border-transparent hover:border-base-300 hover:bg-base-200/50 transition-all duration-300"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-base-200 flex shrink-0 items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500"
             >
-
-            <span
-              >Zespół traci czas na <strong>reproducibility</strong> błędu?</span
-            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path></svg
+              >
+            </div>
+            <div>
+              <p class="font-bold text-lg leading-tight mb-1">
+                Pełna autonomia diagnostyczna
+              </p>
+              <p class="text-sm opacity-60 leading-relaxed text-balance">
+                Koniec z angażowaniem całego zespołu do znalezienia jednego
+                błędu. Wyposaż swoich deweloperów w skille, które pozwalają im <strong
+                  >samodzielnie izolować problemy</strong
+                > w kilka minut, a nie godzin.
+              </p>
+            </div>
           </div>
 
-          <div class="alert shadow-sm border border-base-200 bg-base-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="stroke-error shrink-0 w-6 h-6"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path></svg
+          <div
+            class="group flex items-start gap-4 p-5 rounded-2xl border border-transparent hover:border-base-300 hover:bg-base-200/50 transition-all duration-300"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-base-200 flex shrink-0 items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-500"
             >
-
-            <span>Kod produkcyjny różni się od lokalnego (Source Maps)?</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                ></path></svg
+              >
+            </div>
+            <div>
+              <p class="font-bold text-lg leading-tight mb-1">
+                Dowożenie Sprintów na czas
+              </p>
+              <p class="text-sm opacity-60 leading-relaxed text-balance">
+                Nieprzewidziane bugi to największy wróg estymacji. Dzięki
+                profesjonalnej diagnostyce, faza <em>bug-fixingu</em> przestaje być
+                czarną dziurą w budżecie i harmonogramie Twojego projektu.
+              </p>
+            </div>
           </div>
 
-          <div class="alert shadow-sm border border-base-200 bg-base-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="stroke-error shrink-0 w-6 h-6"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path></svg
+          <div
+            class="group flex items-start gap-4 p-5 rounded-2xl border border-transparent hover:border-base-300 hover:bg-base-200/50 transition-all duration-300"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-base-200 flex shrink-0 items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-500"
             >
-
-            <span
-              >Nikt nie potrafi zinterpretować wyników <strong
-                >Lighthouse</strong
-              >?</span
-            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
+              >
+            </div>
+            <div>
+              <p class="font-bold text-lg leading-tight mb-1">
+                Podniesienie standardów technicznych
+              </p>
+              <p class="text-sm opacity-60 leading-relaxed text-balance">
+                Zainwestuj w "seniority" swojego zespołu. Zmiana nawyków z <em
+                  >"nie wiem dlaczego nie działa"</em
+                > na <em>"znalazłem przyczynę w DevTools"</em> to skokowa poprawa
+                jakości dostarczanego softu.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="md:w-1/2">
+      <div class="lg:w-1/2 w-full relative">
         <div
-          class="mockup-window border border-base-300 bg-base-200 shadow-2xl"
+          class="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 blur-3xl rounded-full"
         >
-          <div class="flex flex-col p-6 bg-base-100 gap-2">
-            <div class="text-xs font-mono text-base-content/40">
-              // Professional Debugging Workflow
-            </div>
+        </div>
 
-            <div class="text-sm font-mono">
-              <span class="text-blue-500">if</span> (bugFound) &#123;
-            </div>
+        <div class="relative z-10 flex flex-col gap-6">
+          <div
+            class="mockup-code bg-[#1a1b26] text-sm shadow-2xl border border-white/5"
+          >
+            <pre
+              data-prefix="1"
+              class="text-slate-500"><code>// ROI dla Twojego Biznesu</code></pre>
+            <pre
+              data-prefix="2"
+              class="text-error"><code>- Low predictable delivery;</code></pre>
+            <pre
+              data-prefix="3"
+              class="text-success"><code>+ High performance debugging;</code></pre>
+            <pre data-prefix="4"><code /></pre>
+            <pre
+              data-prefix="5"
+              class="bg-primary/10 text-warning"><code>Business.value += Efficiency; // Faster TTM (Time-to-Market)</code></pre>
+          </div>
 
-            <div class="text-sm font-mono pl-4">
-              useConsoleLog(); <span class="text-error font-bold"
-                >// Junior Way</span
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              class="bg-base-200/50 p-8 rounded-3xl border border-base-300 backdrop-blur-sm group hover:border-primary transition-colors text-center sm:text-left"
+            >
+              <div
+                class="text-[10px] uppercase tracking-[0.2em] font-black opacity-40 mb-2 italic text-primary"
               >
-            </div>
-
-            <div class="text-sm font-mono pl-4 text-success">
-              useConditionalBreakpoints(); <span class="font-bold"
-                >// Master Way</span
+                Technical Debt
+              </div>
+              <div
+                class="text-4xl font-mono font-black tracking-tighter text-primary"
               >
+                -30%
+              </div>
+              <p class="text-[10px] mt-2 opacity-50 font-bold uppercase">
+                Szybsza stabilizacja kodu
+              </p>
             </div>
+            <div
+              class="bg-base-200/50 p-8 rounded-3xl border border-base-300 backdrop-blur-sm group hover:border-secondary transition-colors text-center sm:text-left"
+            >
+              <div
+                class="text-[10px] uppercase tracking-[0.2em] font-black opacity-40 mb-2 italic text-secondary"
+              >
+                Team Capacity
+              </div>
+              <div
+                class="text-4xl font-mono font-black tracking-tighter text-secondary"
+              >
+                +25%
+              </div>
+              <p class="text-[10px] mt-2 opacity-50 font-bold uppercase">
+                Więcej czasu na feature'y
+              </p>
+            </div>
+          </div>
 
-            <div class="text-sm font-mono">&#125;</div>
+          <div
+            class="p-8 rounded-3xl bg-neutral text-neutral-content border border-neutral-focus"
+          >
+            <h3 class="text-xl font-bold mb-2 uppercase tracking-tight">
+              Gwarancja jakości dostarczania
+            </h3>
+            <p class="text-sm opacity-70 leading-relaxed">
+              Jako manager nie musisz znać każdego panelu w Chrome. Musisz
+              jednak wiedzieć, że Twój zespół posiada narzędzia, by <strong
+                >rozwiązywać incydenty bez eskalacji</strong
+              >. To szkolenie to inwestycja, która zwraca się przy pierwszym
+              krytycznym błędzie na produkcji.
+            </p>
           </div>
         </div>
       </div>

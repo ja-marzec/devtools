@@ -1,93 +1,80 @@
-<section id="faq" class="py-24 bg-base-200/50">
-  <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-3xl font-black text-center mb-12 tracking-tight uppercase">
-      Pytania techniczne
-    </h2>
+---
+const faqs = [
+  {
+    question: "Czy warsztat odbywa się na konkretnym frameworku?",
+    answer:
+      "Zdecydowanie nie. Naszym głównym celem jest nauka fundamentów, które są uniwersalne dla całego ekosystemu webowego. Chrome DevTools interpretuje surowy kod, który trafia do przeglądarki, dlatego techniki, których się nauczysz, zastosujesz z taką samą skutecznością w projektach opartych o React, Angular, Vue, Next.js, a nawet w klasycznym PHP czy statycznym HTML. Zrozumienie natywnych mechanizmów pozwoli Ci szybciej debugować aplikacje niezależnie od panujących trendów.",
+  },
+  {
+    question: "Czy potrzebujemy specjalnego oprogramowania?",
+    answer:
+      "Wystarczy standardowa, zaktualizowana wersja Google Chrome. Dla osób, które chcą być na bieżąco z absolutnymi nowinkami, polecamy instalację wersji Chrome Canary, jednak nie jest to wymóg konieczny. Nie będziemy konfigurować ciężkich IDE ani instalować dodatkowych rozszerzeń – nauczysz się wyciskać 100% możliwości z tego, co już masz zainstalowane na swoim komputerze. Całość warsztatu opiera się na narzędziach dostępnych natywnie dla każdego dewelopera.",
+  },
+  {
+    question: "Jaki poziom wiedzy jest wymagany?",
+    answer:
+      "Warsztat został zaprojektowany tak, aby przynieść korzyści na każdym szczeblu kariery. Wymagamy jedynie swobodnego poruszania się w podstawach HTML i CSS oraz rozumienia prostych skryptów JavaScript. Juniorzy zyskają solidne fundamenty i nauczą się poprawnych nawyków, natomiast Seniorzy często są zaskoczeni ukrytymi funkcjami paneli Performance czy Memory, o których oficjalna dokumentacja często wspomina jedynie zdawkowo.",
+  },
+  {
+    question: "Czy otrzymam materiały po zakończeniu?",
+    answer:
+      "Tak, edukacja nie kończy się na samym spotkaniu. Każdy uczestnik otrzyma ekskluzywny dostęp do bazy wiedzy, w tym cyfrowy 'DevTools Cheat Sheet' w formacie PDF, gotowy do wydruku. Pakiet zawiera listę zaawansowanych skrótów klawiszowych, ukryte flagi eksperymentalne oraz dostęp do zamkniętego repozytorium GitHub z przykładami 'zepsutych' aplikacji, na których możesz samodzielnie trenować nowe umiejętności.",
+  },
+  {
+    question: "Czy warsztat będzie nagrywany?",
+    answer:
+      "W przypadku warsztatów online, pełne nagranie wysokiej jakości zostanie udostępnione uczestnikom na dedykowanej platformie przez 30 dni po zakończeniu wydarzenia. Pozwala to na spokojne powtórzenie trudniejszych zagadnień, przeanalizowanie skomplikowanych wykresów z panelu Network i przećwiczenie technik debugowania we własnym tempie, bez presji czasu.",
+  },
+  {
+    question: "Czy system operacyjny ma znaczenie?",
+    answer:
+      "Zupełnie nie. Narzędzia Chrome DevTools wyglądają i działają identycznie na systemach Windows, macOS oraz Linux. Podczas warsztatu zwracamy szczególną uwagę na różnice w skrótach klawiszowych (np. Cmd vs Ctrl), dzięki czemu każdy uczestnik, niezależnie od preferowanego sprzętu, będzie mógł płynnie podążać za instrukcjami trenera.",
+  },
+];
+---
 
-    <div class="space-y-3">
-      <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-        <input type="radio" name="faq-acc" checked="checked" />
-        <div class="collapse-title text-lg font-bold">
-          Czy warsztat odbywa się na konkretnym frameworku?
-        </div>
-        <div class="collapse-content">
-          <p class="opacity-70 text-sm">
-            Nie. Skupiamy się na natywnych narzędziach przeglądarki, które
-            działają niezależnie od tego, czy używasz Reacta, Angulara, Next.js
-            czy czystego PHP.
-          </p>
-        </div>
-      </div>
+<section id="faq" class="py-24 bg-base-100">
+  <div class="max-w-5xl mx-auto px-6">
+    {/* Header Section */}
+    <div class="flex flex-col items-center mb-16 text-center">
+      <h2
+        class="text-4xl font-black tracking-tight uppercase mb-4 text-base-content"
+      >
+        FAQ
+      </h2>
+      <div class="h-1.5 w-12 bg-primary rounded-full"></div>
+      <p class="mt-6 text-base-content/60 max-w-md italic">
+        Wszystko, co musisz wiedzieć o warsztatach Chrome DevTools.
+      </p>
+    </div>
 
-      <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-        <input type="radio" name="faq-acc" />
-        <div class="collapse-title text-lg font-bold">
-          Czy potrzebujemy specjalnego oprogramowania?
-        </div>
-        <div class="collapse-content">
-          <p class="opacity-70 text-sm">
-            Wystarczy najnowsza wersja Google Chrome (lub Chrome Canary dla
-            nowinek) oraz dostęp do internetu. Żadnych skomplikowanych
-            konfiguracji IDE.
-          </p>
-        </div>
-      </div>
+    {/* Accordion Container */}
+    <div class="space-y-4">
+      {
+        faqs.map((faq, index) => (
+          <div class="group collapse collapse-arrow bg-base-200/40 border border-base-300 transition-all duration-200 hover:border-primary/40 hover:bg-base-200/70">
+            <input
+              type="radio"
+              name="faq-acc"
+              checked={index === 0 ? "checked" : undefined}
+              class="peer"
+            />
 
-      <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-        <input type="radio" name="faq-acc" />
-        <div class="collapse-title text-lg font-bold">
-          Jaki poziom wiedzy jest wymagany?
-        </div>
-        <div class="collapse-content">
-          <p class="opacity-70 text-sm">
-            Warsztat jest przeznaczony dla osób, które znają podstawy HTML i
-            CSS. Nawet jeśli jesteś seniorem, gwarantujemy, że odkryjesz
-            narzędzia w DevTools, o których istnieniu nie miałeś pojęcia.
-          </p>
-        </div>
-      </div>
+            <div class="collapse-title text-lg font-bold peer-checked:text-primary transition-colors flex items-center gap-2">
+              <span class="opacity-60 font-mono text-sm hidden sm:inline">
+                0{index + 1}
+              </span>
+              {faq.question}
+            </div>
 
-      <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-        <input type="radio" name="faq-acc" />
-        <div class="collapse-title text-lg font-bold">
-          Czy otrzymam materiały po zakończeniu?
-        </div>
-        <div class="collapse-content">
-          <p class="opacity-70 text-sm">
-            Tak! Każdy uczestnik otrzymuje cyfrowy "Cheat Sheet" z listą skrótów
-            klawiszowych, ukrytych funkcji oraz linki do repozytorium z
-            przykładami, na których pracowaliśmy.
-          </p>
-        </div>
-      </div>
-
-      <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-        <input type="radio" name="faq-acc" />
-        <div class="collapse-title text-lg font-bold">
-          Czy warsztat będzie nagrywany?
-        </div>
-        <div class="collapse-content">
-          <p class="opacity-70 text-sm">
-            W przypadku warsztatów online, nagranie zostanie udostępnione
-            uczestnikom przez 30 dni po wydarzeniu, aby mogli na spokojnie
-            przećwiczyć trudniejsze zagadnienia.
-          </p>
-        </div>
-      </div>
-
-      <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-        <input type="radio" name="faq-acc" />
-        <div class="collapse-title text-lg font-bold">
-          Czy system operacyjny ma znaczenie?
-        </div>
-        <div class="collapse-content">
-          <p class="opacity-70 text-sm">
-            Zupełnie nie. Narzędzia Chrome DevTools wyglądają i działają
-            identycznie na Windowsie, macOS oraz Linuxie. Pokażemy skróty
-            klawiszowe dla obu popularnych systemów.
-          </p>
-        </div>
-      </div>
+            <div class="collapse-content transition-all">
+              <div class="pt-2 pb-4 text-base-content/80 leading-relaxed border-t border-base-300/50 mt-2 ">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

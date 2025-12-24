@@ -23,13 +23,13 @@
             <img
               src="https://picsum.photos/1200/1600"
               class="w-full h-auto max-w-sm object-cover aspect-[3/4] grayscale group-hover:grayscale-0 transition-all duration-700"
-              alt="Piotr Kowalski"
+              alt="Hubert Marzecki"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6"
             >
               <span class="text-white font-bold tracking-wider"
-                >#CHROME_EXPERT</span
+                >#FRONTEND_ENGINEER</span
               >
             </div>
           </div>
@@ -47,41 +47,45 @@
             <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"
             ></span>
           </span>
-          Twój Instruktor
+          Prowadzący szkolenie
         </div>
 
         <h2 class="text-5xl font-black mb-6 tracking-tight leading-none">
-          Piotr <span class="text-primary italic">"Debuger"</span> Kowalski
+          Hubert Marzecki
         </h2>
 
         <p
           class="text-xl opacity-80 mb-8 leading-relaxed max-w-2xl text-pretty"
         >
-          Od 12 lat optymalizuje największe systemy e-commerce w Polsce. Jako <span
+          Senior Frontend Developer specjalizujący się w budowie zaawansowanych
+          systemów webowych. Moje doświadczenie obejmuje optymalizację platform
+          w sektorze <span
             class="text-base-content font-bold underline decoration-primary decoration-2 underline-offset-4"
-            >Senior Frontend Engineer</span
-          > spędziłem tysiące godzin w panelu Chrome DevTools, rozwiązując problemy,
-          które inni uznawali za niemożliwe.
+            >bankowym</span
+          > oraz rozwój interfejsów dla aplikacji opartych o <span
+            class="text-base-content font-bold underline decoration-primary decoration-2 underline-offset-4"
+            >Machine Learning</span
+          >.
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
           {
             [
               {
-                label: "50+ Szkoleń",
-                icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+                label: "Analiza Performance",
+                icon: "M13 10V3L4 14h7v7l9-11h-7z",
               },
               {
-                label: "Google Expert",
-                icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-1.354 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946 1.354 3.42 3.42 0 013.13 3.13 3.42 3.42 0 001.354 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-1.354 1.946 3.42 3.42 0 01-3.13 3.13 3.42 3.42 0 00-1.946 1.354 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-1.354 3.42 3.42 0 01-3.13-3.13 3.42 3.42 0 00-1.354-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 001.354-1.946 3.42 3.42 0 013.13-3.13z",
-              },
-              {
-                label: "Open Source",
+                label: "Ekosystem JS/TS",
                 icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
               },
               {
-                label: "Speaker @ JSConf",
-                icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z",
+                label: "Data-Driven UI",
+                icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+              },
+              {
+                label: "Standardy Enterprise",
+                icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-1.354 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946 1.354 3.42 3.42 0 013.13 3.13 3.42 3.42 0 001.354 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-1.354 1.946 3.42 3.42 0 01-3.13 3.13 3.42 3.42 0 00-1.946 1.354 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-1.354 3.42 3.42 0 01-3.13-3.13 3.42 3.42 0 00-1.354-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 001.354-1.946 3.42 3.42 0 013.13-3.13z",
               },
             ].map((stat) => (
               <div class="flex items-center gap-3 p-3 rounded-2xl bg-base-100/50 border border-base-300 hover:border-primary/50 transition-colors group/stat">
@@ -124,8 +128,9 @@
             >
           </div>
           <p class="relative z-10 text-lg italic leading-snug">
-            "Moim celem nie jest nauczenie Cię 'gdzie klikać', ale pokazanie Ci
-            jak przeglądarka myśli pod spodem."
+            "Wierzę, że głębokie zrozumienie narzędzi diagnostycznych jest
+            kluczem do dostarczania stabilnego oprogramowania. Pomagam zespołom
+            podejmować decyzje w oparciu o twarde dane z przeglądarki."
           </p>
         </div>
       </div>

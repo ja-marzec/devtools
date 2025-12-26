@@ -2,107 +2,100 @@
 const roles = [
   {
     number: "01",
-    title: "Frontend Dev",
+    title: "Frontend Developer",
+    label: "Integration Efficiency",
     description:
-      "Opanuj narzędzia, dzięki którym <span class='text-primary font-bold'>współpraca z Backendem</span> stanie się formalnością. Przestań czekać na gotowe endpointy.",
-    colorClass: "hover:bg-primary/5",
+      "Optymalizacja procesów integracji z warstwą danych. Samodzielne <span class='text-primary font-bold'>mockowanie odpowiedzi API</span> pozwala na równoległe prowadzenie prac deweloperskich bez blokad ze strony backendu.",
+    colorClass: "hover:bg-primary/[0.02]",
     textClass: "text-primary",
-    bgClass: "group-hover:bg-primary",
-    contentClass: "group-hover:text-primary-content",
+    badgeClass: "bg-primary/10 text-primary",
   },
   {
     number: "02",
-    title: "Backend Dev",
+    title: "Backend Developer",
+    label: "Protocol Analysis",
     description:
-      "Koniec z <span class='italic'>\"u mnie działa\"</span>. Debuguj nagłówki i analizuj payload <span class='text-info font-bold'>bez otwierania Postmana</span>.",
-    colorClass: "hover:bg-info/5",
+      "Precyzyjna weryfikacja kontraktów API w środowisku runtime. Analiza nagłówków i struktury payloadu bezpośrednio w silniku przeglądarki <span class='text-info font-bold'>eliminuje rozbieżności</span> między dokumentacją a stanem faktycznym.",
+    colorClass: "hover:bg-info/[0.02]",
     textClass: "text-info",
-    bgClass: "group-hover:bg-info",
-    contentClass: "group-hover:text-info-content",
+    badgeClass: "bg-info/10 text-info",
   },
   {
     number: "03",
-    title: "QA / Tester",
+    title: "QA Specialist",
+    label: "Advanced Diagnostics",
     description:
-      "Zmień \"nie działa\" w profesjonalną diagnostykę. Wyciągaj dane, które <span class='text-secondary font-bold'>ułatwią wykrycie</span> i szybką naprawę bugów.",
-    colorClass: "hover:bg-secondary/5",
+      "Skrócenie cyklu raportowania błędów poprzez dostarczanie pełnej dokumentacji technicznej zdarzenia. Wykorzystanie logów konsoli i stanów sieci <span class='text-secondary font-bold'>przyspiesza proces triage</span> i debugowania.",
+    colorClass: "hover:bg-secondary/[0.02]",
     textClass: "text-secondary",
-    bgClass: "group-hover:bg-secondary",
-    contentClass: "group-hover:text-secondary-content",
+    badgeClass: "bg-secondary/10 text-secondary",
   },
   {
     number: "04",
-    title: "PO / UI / UX",
+    title: "Product & UX",
+    label: "Experience Auditing",
     description:
-      "Mockuj pomysły bezpośrednio w przeglądarce. Sprawdź, jak produkt radzi sobie na <span class='text-accent font-bold '>low-endowych</span> urządzeniach.",
-    colorClass: "hover:bg-accent/5",
+      "Weryfikacja założeń projektowych na rzeczywistych danych. Testowanie wydajności na <span class='text-accent font-bold'>ograniczonych zasobach sprzętowych</span> pozwala na obiektywną ocenę UX u klienta końcowego.",
+    colorClass: "hover:bg-accent/[0.02]",
     textClass: "text-accent",
-    bgClass: "group-hover:bg-accent",
-    contentClass: "group-hover:text-accent-content",
+    badgeClass: "bg-accent/10 text-accent",
   },
 ];
 ---
 
-<section class="py-24 bg-base-100 text-base-content overflow-hidden">
+<section class="py-24 bg-white text-slate-900 overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
     <div
-      class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"
+      class="flex flex-col md:flex-row justify-between items-start mb-20 gap-8"
     >
       <div class="max-w-xl">
-        <h2 class="text-5xl font-black tracking-tighter uppercase italic">
-          Kogo zapraszamy?
+        <h2 class="text-4xl lg:text-5xl font-black tracking-tighter">
+          Profil uczestnika
         </h2>
-        <div class="h-1.5 w-24 bg-primary mt-4"></div>
+        <p class="mt-4 text-slate-500 text-lg leading-relaxed">
+          Program został opracowany pod kątem kluczowych ról w procesie SDLC,
+          dostarczając unikalnych korzyści dla każdego etapu budowy produktu.
+        </p>
       </div>
-      <p class="text-xl opacity-50 font-mono font-medium lowercase">
-        // Wybierz swoją rolę
-      </p>
+      <div class="hidden md:block">
+        <span
+          class="px-4 py-2 bg-slate-100 rounded-full text-xs font-mono font-bold tracking-widest text-slate-400 uppercase"
+        >
+          // Role-based benefits
+        </span>
+      </div>
     </div>
 
-    <div class="divide-y divide-base-300 border-t border-b border-base-300">
+    <div
+      class="grid grid-cols-1 divide-y divide-slate-100 border-t border-b border-slate-100"
+    >
       {
         roles.map((role) => (
           <div
-            class={`group py-12 transition-all duration-500 ${role.colorClass} px-6 -mx-6 grid md:grid-cols-12 items-center gap-8 cursor-default`}
+            class={`group py-10 transition-all duration-300 ${role.colorClass} px-6 -mx-6 grid md:grid-cols-12 items-start gap-8 cursor-default`}
           >
             <div
-              class={`md:col-span-1 opacity-40 group-hover:opacity-100 transition-opacity font-mono text-2xl ${role.textClass}`}
+              class={`md:col-span-1 font-mono text-sm font-bold opacity-30 group-hover:opacity-100 transition-opacity ${role.textClass}`}
             >
-              {role.number}
+              [{role.number}]
             </div>
 
             <div class="md:col-span-4">
-              <h3 class="text-3xl font-black uppercase group-hover:translate-x-3 transition-transform duration-300 tracking-tighter">
+              <h3 class="text-2xl font-black uppercase tracking-tight mb-2 transition-transform duration-300 group-hover:translate-x-1">
                 {role.title}
               </h3>
+              <span
+                class={`inline-block px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest ${role.badgeClass} opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0`}
+              >
+                {role.label}
+              </span>
             </div>
 
-            <div class="md:col-span-5">
+            <div class="md:col-span-7">
               <p
-                class="text-lg opacity-70 group-hover:opacity-100 transition-opacity leading-relaxed"
+                class="text-slate-600 text-lg leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity"
                 set:html={role.description}
               />
-            </div>
-
-            <div class="md:col-span-2 flex justify-end">
-              <div
-                class={`cursor-pointer w-12 h-12 rounded-full border border-base-300 flex items-center justify-center transition-all transform group-hover:rotate-45 ${role.bgClass} ${role.contentClass}`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </div>
             </div>
           </div>
         ))

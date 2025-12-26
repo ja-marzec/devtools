@@ -53,12 +53,8 @@ const faqs = [
       {
         faqs.map((faq, index) => (
           <div class="group collapse collapse-arrow bg-base-200/40 border border-base-300 transition-all duration-200 hover:border-primary/40 hover:bg-base-200/70">
-            <input
-              type="radio"
-              name="faq-acc"
-              checked={index === 0 ? "checked" : undefined}
-              class="peer"
-            />
+            {/* ZMIANA: type="radio" na type="checkbox" oraz usunięcie atrybutu name */}
+            <input type="checkbox" class="peer" />
 
             <div class="collapse-title text-lg font-bold peer-checked:text-primary transition-colors flex items-center gap-2">
               <span class="opacity-60 font-mono text-sm hidden sm:inline">

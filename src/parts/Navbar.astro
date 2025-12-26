@@ -1,6 +1,9 @@
 <div class="navbar bg-base-100 sticky top-0 z-50 shadow-sm px-4 md:px-8">
   <div class="navbar-start">
-    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter">
+    <a
+      class="flex items-center gap-2 font-black text-2xl tracking-tighter"
+      href="/"
+    >
       <div class="p-1 bg-primary text-primary-content rounded-lg">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -15,21 +18,50 @@
             d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg
         >
       </div>
-
       <span>DevTools<span class="text-primary">Mastery</span></span>
-    </div>
+    </a>
   </div>
 
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1 font-medium gap-2">
-      <li><a href="#dlaczego">Dlaczego?</a></li>
       <li><a href="#tools">Narzędzia</a></li>
+      <li><a href="#dlaczego">Dlaczego?</a></li>
       <li><a href="#program">Program</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
   </div>
 
   <div class="navbar-end">
-    <a href="#kontakt" class="btn btn-primary rounded-full px-8">Kontakt</a>
+    <div class="dropdown dropdown-left dropdown-bottom">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden -ml-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16"></path>
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow-xl bg-base-100 rounded-box w-64 border border-base-200"
+      >
+        <li><a href="#tools">Narzędzia</a></li>
+        <li><a href="#dlaczego">Dlaczego?</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <a
+      href="#kontakt"
+      class="btn btn-primary rounded-full md:px-4 md:flex hidden">Kontakt</a
+    >
   </div>
 </div>

@@ -1,0 +1,96 @@
+<div
+  id="dev-cursor"
+  class="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:block"
+>
+  <div
+    id="cursor-box"
+    class="absolute w-5 h-5 border border-[#4ade80] -translate-x-1/2 -translate-y-1/2 rounded-[2px] transition-all duration-200 shadow-[0_0_10px_rgba(74,222,128,0.2)]"
+  >
+  </div>
+  <div class="absolute h-[1px] w-10 bg-[#4ade80]/40 -translate-x-1/2"></div>
+  <div class="absolute w-[1px] h-10 bg-[#4ade80]/40 -translate-y-1/2"></div>
+
+  <div
+    class="absolute top-4 left-4 bg-transparent backdrop-blur-md border border-info text-[12px] font-mono text-info px-1.5 py-0.5 rounded flex gap-2 shadow-2xl"
+  >
+    <span><span id="cursor-x"></span>:<span id="cursor-y"></span></span>
+  </div>
+</div>
+
+<div
+  id="dev-grid"
+  class="fixed inset-0 pointer-events-none z-[1] opacity-0 transition-opacity duration-700"
+>
+  <div
+    class="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_400px_400px_at_var(--mouse-x)_var(--mouse-y),#000_15%,transparent_100%)]"
+  >
+  </div>
+</div>
+
+<script>
+  const cursor = document.getElementById("dev-cursor");
+  const cursorBox = document.getElementById("cursor-box");
+  const grid = document.getElementById("dev-grid");
+  const xCoord = document.getElementById("cursor-x");
+  const yCoord = document.getElementById("cursor-y");
+
+  window.addEventListener("mousemove", (e) => {
+    const { clientX, clientY } = e;
+
+    if (cursor) {
+      cursor.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
+      if (xCoord)
+        xCoord.innerText = Math.floor(clientX).toString().padStart(4, "0");
+      if (yCoord)
+        yCoord.innerText = Math.floor(clientY).toString().padStart(4, "0");
+    }
+
+    if (grid) {
+      grid.style.setProperty("--mouse-x", `${clientX}px`);
+      grid.style.setProperty("--mouse-y", `${clientY}px`);
+      grid.style.opacity = "1";
+    }
+  });
+
+  // Obsługa hoverów dla elementów interaktywnych
+  const interactive = document.querySelectorAll("a, button");
+  interactive.forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      if (cursorBox) {
+        cursorBox.style.width = "35px";
+        cursorBox.style.height = "35px";
+        cursorBox.style.borderColor = "#22d3ee"; // Zmiana na "Cyan" przy hoverze dla kontrastu
+        cursorBox.style.backgroundColor = "rgba(34, 211, 238, 0.05)";
+        cursorBox.style.borderStyle = "dashed";
+      }
+    });
+    el.addEventListener("mouseleave", () => {
+      if (cursorBox) {
+        cursorBox.style.width = "20px";
+        cursorBox.style.height = "20px";
+        cursorBox.style.borderColor = "#4ade80"; // Powrót do "Green"
+        cursorBox.style.backgroundColor = "transparent";
+        cursorBox.style.borderStyle = "solid";
+      }
+    });
+  });
+</script>
+
+<style is:global>
+  @media (min-width: 768px) {
+    body {
+      cursor: none !important;
+    }
+    a,
+    button,
+    .cursor-pointer,
+    .group {
+      cursor: none !important;
+    }
+  }
+
+  #dev-cursor {
+    will-change: transform;
+    transition: transform 0.06s cubic-bezier(0.2, 0.49, 0.32, 1);
+  }
+</style>

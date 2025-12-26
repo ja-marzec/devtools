@@ -26,14 +26,14 @@ const schedule = [
     description:
       "Wspólna analiza problemów z Waszych projektów. Praktyczne porady i zamknięcie warsztatu.",
     icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z",
-    done: false,
+    done: true,
   },
 ];
 ---
 
 <section id="program" class="py-24 bg-base-100 overflow-hidden">
   <div class="max-w-4xl mx-auto px-6">
-    <div class="flex flex-col items-center mb-16">
+    <div class="flex flex-col items-center mb-16 animate-on-scroll">
       <h2
         class="text-4xl md:text-5xl font-black text-center tracking-tighter mb-4"
       >
@@ -47,7 +47,7 @@ const schedule = [
     >
       {
         schedule.map((item, index) => (
-          <li>
+          <li class="animate-on-scroll">
             {index !== 0 && <hr class={item.done ? "bg-primary" : ""} />}
 
             <div class="timeline-middle">
@@ -66,7 +66,7 @@ const schedule = [
             </div>
 
             <div
-              class={`${index % 2 === 0 ? "timeline-start md:text-end" : "timeline-end"} mb-12`}
+              class={`${index % 2 === 0 ? "timeline-start md:text-end" : "timeline-end"} mb-12 mt-0`}
             >
               <div class="text-xs font-bold tracking-widest uppercase opacity-40 mb-1">
                 Moduł 0{index + 1}
@@ -88,3 +88,49 @@ const schedule = [
     </ul>
   </div>
 </section>
+
+<style>
+  /* Stan bazowy dla animacji */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Stan po aktywacji */
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Animacja dla linii (hr) - opcjonalna, ale dodaje płynności */
+  .animate-on-scroll hr {
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 1s ease-out 0.3s;
+  }
+
+  .animate-on-scroll.is-visible hr {
+    transform: scaleY(1);
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px", // Aktywuje chwilę zanim element wejdzie w pełny widok
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  }, observerOptions);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+    animatedElements.forEach((el) => observer.observe(el));
+  });
+</script>

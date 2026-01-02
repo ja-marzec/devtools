@@ -1,25 +1,29 @@
 <section id="dlaczego" class="py-24 bg-white overflow-hidden text-slate-900">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex flex-col lg:flex-row gap-16 items-center">
+      <!-- Lewa kolumna - Główne korzyści -->
       <div class="lg:w-1/2">
         <div
-          class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-mono font-bold mb-6 uppercase tracking-[0.2em]"
+          class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-6 uppercase tracking-wider"
         >
-          Analiza wartości (Business Value)
+          Wartość dla biznesu
         </div>
+
         <h2
-          class="text-4xl md:text-5xl font-black mb-8 tracking-tighter leading-[1.1]"
+          class="text-4xl md:text-5xl font-black mb-8 tracking-tight leading-tight"
         >
-          Zoptymalizuj cykl <br />
-          <span class="text-primary italic">wytwórczy oprogramowania.</span>
+          Przyspiesz i usprawnij<br />
+          <span class="text-primary">tworzenie oprogramowania.</span>
         </h2>
 
-        <div class="space-y-2">
+        <!-- Lista korzyści -->
+        <div class="space-y-4">
+          <!-- Korzyść 1 -->
           <div
             class="group flex items-start gap-4 p-5 rounded-2xl border border-transparent hover:border-slate-200 hover:bg-slate-50 transition-all duration-300"
           >
             <div
-              class="w-10 h-10 rounded-xl bg-slate-100 flex shrink-0 items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500"
+              class="w-10 h-10 rounded-xl bg-slate-100 flex shrink-0 items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -27,30 +31,30 @@
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                ><path
+              >
+                <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
-              >
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
             </div>
             <div>
-              <p class="font-bold text-lg leading-tight mb-1">
-                Skrócenie fazy stabilizacji
-              </p>
-              <p class="text-sm text-slate-500 leading-relaxed">
-                Zwiększ przewidywalność dostarczania funkcji poprzez eliminację
-                "ukrytego długu diagnostycznego". Zespół identyfikuje przyczyny
-                błędów na etapie developmentu, a nie po wdrożeniu.
+              <h3 class="font-bold text-lg mb-2">Krótsza faza stabilizacji</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Zwiększ przewidywalność dostarczania funkcji. Zespół
+                identyfikuje i naprawia błędy podczas rozwoju, a nie po
+                wdrożeniu do produkcji.
               </p>
             </div>
           </div>
 
+          <!-- Korzyść 2 -->
           <div
             class="group flex items-start gap-4 p-5 rounded-2xl border border-transparent hover:border-slate-200 hover:bg-slate-50 transition-all duration-300"
           >
             <div
-              class="w-10 h-10 rounded-xl bg-slate-100 flex shrink-0 items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-500"
+              class="w-10 h-10 rounded-xl bg-slate-100 flex shrink-0 items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,116 +62,113 @@
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                ><path
+              >
+                <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path></svg
-              >
+                ></path>
+              </svg>
             </div>
             <div>
-              <p class="font-bold text-lg leading-tight mb-1">
-                Redukcja kosztów regresji
-              </p>
-              <p class="text-sm text-slate-500 leading-relaxed">
-                Zastąpienie manualnego sprawdzania "czy działa" precyzyjnym
-                audytem stanów aplikacji. Mniejsza liczba poprawek to
-                bezpośrednia oszczędność budżetu sprintu.
+              <h3 class="font-bold text-lg mb-2">Mniejsze koszty regresji</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Zastąp ręczne testy automatycznymi audytami stanu aplikacji.
+                Mniej poprawek to bezpośrednia oszczędność czasu i budżetu.
               </p>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Prawa kolumna - Wizualizacje i metryki -->
       <div class="lg:w-1/2 w-full relative">
+        <!-- Dekoracja tła -->
         <div
           class="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 blur-3xl rounded-full"
         >
         </div>
 
-        <div class="relative z-10 flex flex-col gap-6">
+        <div class="relative z-10 space-y-6">
+          <!-- Blok kodu -->
           <div
             class="mockup-code bg-[#1a1b26] text-sm shadow-2xl border border-white/5"
           >
             <pre
               data-prefix="1"
-              class="text-slate-500"><code>// Optymalizacja operacyjna</code></pre>
+              class="text-slate-400"><code>// Optymalizacja procesu wytwórczego</code></pre>
             <pre
               data-prefix="2"
-              class="text-error"><code>- MTTR (Mean Time To Repair): High;</code></pre>
+              class="text-red-400"><code>- Średni czas naprawy (MTTR): Wysoki</code></pre>
             <pre
               data-prefix="3"
-              class="text-success"><code>+ Engineering Excellence: Max;</code></pre>
+              class="text-green-400"><code>+ Jakość inżynierska: Maksymalna</code></pre>
             <pre
               data-prefix="4"
-              class="bg-primary/10 text-warning"><code>Profit.increase(Efficiency * Team_Skills);</code></pre>
+              class="bg-primary/10 text-yellow-300"><code>Zysk.wzrost(Efektywność * Kompetencje_Zespołu);</code></pre>
           </div>
 
+          <!-- Kafelki z metrykami -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Kafelek 1 -->
             <div
-              class="bg-slate-50 p-6 rounded-2xl border border-slate-100 group hover:border-primary transition-all"
+              class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-primary transition-all"
             >
               <div
-                class="text-[12px] uppercase tracking-widest font-bold mb-1 text-primary"
+                class="text-xs uppercase tracking-wider font-semibold mb-2 text-primary"
               >
                 Przewaga procesowa
               </div>
-              <div class="text-2xl font-black tracking-tighter">
-                Self-Sufficiency
-              </div>
-              <p class="text-md mt-2 text-slate-500 leading-relaxed">
-                Deweloperzy izolują błędy API/UI bez angażowania innych działów.
+              <h3 class="text-2xl font-bold mb-2">Samowystarczalność</h3>
+              <p class="text-sm text-slate-600">
+                Deweloperzy samodzielnie diagnozują błędy API/UI bez angażowania
+                innych zespołów.
               </p>
             </div>
 
+            <!-- Kafelek 2 -->
             <div
-              class="bg-slate-50 p-6 rounded-2xl border border-slate-100 group hover:border-secondary transition-all"
+              class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-secondary transition-all"
             >
               <div
-                class="text-[12px] uppercase tracking-widest font-bold mb-1 text-secondary"
+                class="text-xs uppercase tracking-wider font-semibold mb-2 text-secondary"
               >
                 Wskaźnik jakości
               </div>
-              <div class="text-2xl font-black tracking-tighter">
-                MTTR Reduction
-              </div>
-              <p class="text-md mt-2 text-slate-500 leading-relaxed">
-                Skrócenie średniego czasu naprawy incydentów o 40-60%.
+              <h3 class="text-2xl font-bold mb-2">Redukcja MTTR</h3>
+              <p class="text-sm text-slate-600">
+                Znaczne skrócenie średniego czasu naprawy incydentów.
               </p>
             </div>
 
+            <!-- Kafelek 3 -->
             <div
-              class="bg-slate-50 p-6 rounded-2xl border border-slate-100 group hover:border-accent transition-all"
+              class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-blue-500 transition-all"
             >
               <div
-                class="text-[12px] uppercase tracking-widest font-bold mb-1 text-accent"
+                class="text-xs uppercase tracking-wider font-semibold mb-2 text-blue-500"
               >
                 Efektywność
               </div>
-              <div class="text-2xl font-black tracking-tighter">
-                Zero-Guessing
-              </div>
-              <p class="text-md mt-2 text-slate-500 leading-relaxed">
-                Decyzje techniczne oparte na faktach z runtime, nie na
-                domysłach.
+              <h3 class="text-2xl font-bold mb-2">Decyzje oparte na danych</h3>
+              <p class="text-sm text-slate-600">
+                Wybory techniczne oparte na faktach, a nie na przypuszczeniach.
               </p>
             </div>
 
+            <!-- Kafelek 4 -->
             <div
-              class="bg-slate-50 p-6 rounded-2xl border border-slate-100 group hover:border-info transition-all"
+              class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-500 transition-all"
             >
               <div
-                class="text-[12px] uppercase tracking-widest font-bold mb-1 text-info"
+                class="text-xs uppercase tracking-wider font-semibold mb-2 text-emerald-500"
               >
-                Inwestycja
+                Inwestycja w zespół
               </div>
-              <div class="text-2xl font-black tracking-tighter">
-                Skill Scalability
-              </div>
-              <p class="text-md mt-2 text-slate-500 leading-relaxed">
-                Wzrost kompetencji technicznych zespołu bez dodatkowych
-                narzędzi.
+              <h3 class="text-2xl font-bold mb-2">Wzrost kompetencji</h3>
+              <p class="text-sm text-slate-600">
+                Rozwój umiejętności technicznych bez dodatkowych narzędzi.
               </p>
             </div>
           </div>
@@ -175,35 +176,23 @@
       </div>
     </div>
 
-    <div
-      class="mt-12 max-w-4xl mx-auto p-8 rounded-3xl bg-slate-900 text-white shadow-xl"
-    >
+    <!-- Baner gwarancji (można odkomentować gdy potrzebny) -->
+    <!--
+    <div class="mt-16 max-w-4xl mx-auto p-8 rounded-3xl bg-slate-900 text-white shadow-xl">
       <div class="flex flex-col md:flex-row gap-6 items-center">
-        <div class="shrink-0 p-3 bg-white/10 rounded-2xl">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-8 h-8 text-info"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
-          >
+        <div class="shrink-0 p-4 bg-white/10 rounded-2xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
         </div>
         <div>
-          <h3 class="text-lg font-bold uppercase tracking-tight text-info">
-            Gwarancja stabilności wdrożeń
-          </h3>
-          <p class="text-white leading-relaxed mt-1">
-            Zapewnij swojemu zespołowi warsztat, który eliminuje eskalację
-            incydentów. To szkolenie przekłada się na realną oszczędność
-            roboczogodzin już w pierwszym cyklu produkcyjnym po jego ukończeniu.
+          <h3 class="text-xl font-bold mb-2 text-blue-400">Gwarancja efektów</h3>
+          <p class="text-white/90 leading-relaxed">
+            Zapewniamy, że wdrożenie naszych rozwiązań przyniesie mierzalne korzyści już w pierwszym cyklu produkcyjnym. W przypadku braku efektów zwracamy 100% inwestycji.
           </p>
         </div>
       </div>
     </div>
+    -->
   </div>
 </section>

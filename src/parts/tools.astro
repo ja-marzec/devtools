@@ -6,6 +6,9 @@ const tools = [
     colorClass: "text-primary",
     iconAnimation: "group-hover:rotate-12 group-hover:scale-110",
     title: "HTML Inspector",
+    description:
+      "Pełna kontrola nad strukturą DOM. Edytuj HTML w czasie rzeczywistym i weryfikuj drzewo dostępności (A11y).",
+    link: "https://developer.chrome.com/docs/devtools/dom/",
     features: ["Live DOM editing", "Accessibility tree"],
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>`,
   },
@@ -15,6 +18,9 @@ const tools = [
     colorClass: "text-secondary",
     iconAnimation: "group-hover:-rotate-12 group-hover:brightness-125",
     title: "CSS Debugger",
+    description:
+      "Zaawansowana inspekcja stylów. Wizualizuj układy Flexbox/Grid i rozwiązuj konflikty dziedziczenia CSS.",
+    link: "https://developer.chrome.com/docs/devtools/css/",
     features: ["Computed styles", "Flexbox/Grid inspectors"],
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>`,
   },
@@ -24,6 +30,9 @@ const tools = [
     colorClass: "text-accent",
     iconAnimation: "group-hover:animate-pulse",
     title: "Network Analyzer",
+    description:
+      "Monitoruj wszystkie żądania sieciowe. Analizuj czasy ładowania (Waterfall) i symuluj wolne łącza.",
+    link: "https://developer.chrome.com/docs/devtools/network/",
     features: ["Waterfall analysis", "Throttling simulation"],
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
   },
@@ -33,6 +42,9 @@ const tools = [
     colorClass: "text-primary",
     iconAnimation: "group-hover:-translate-y-2",
     title: "Local Overrides",
+    description:
+      "Zapisuj zmiany wprowadzone w DevTools bezpośrednio na dysku lokalnym, zachowując je po odświeżeniu.",
+    link: "https://developer.chrome.com/docs/devtools/overrides/",
     features: ["Persistent changes", "Mock API responses"],
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>`,
   },
@@ -40,8 +52,11 @@ const tools = [
     badge: "Recorder",
     badgeClass: "badge-secondary",
     colorClass: "text-secondary",
-    isRecorder: true, // Specjalna flaga dla animacji kropki
+    isRecorder: true,
     title: "User Flow Recorder",
+    description:
+      "Nagrywaj, odtwarzaj i mierz ścieżki użytkownika. Eksportuj testy bezpośrednio do Puppeteer.",
+    link: "https://developer.chrome.com/docs/devtools/recorder/",
     features: ["Automated testing", "Puppeteer exports"],
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>`,
   },
@@ -51,6 +66,9 @@ const tools = [
     colorClass: "text-accent",
     iconAnimation: "animate-float-on-hover",
     title: "Advanced Debugger",
+    description:
+      "Interaktywne środowisko JavaScript. Używaj 'Live Expressions' i warunkowych breakpointów.",
+    link: "https://developer.chrome.com/docs/devtools/console/",
     features: ["Conditional breakpoints", "Live expressions"],
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>`,
   },
@@ -91,8 +109,8 @@ const tools = [
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         tools.map((tool) => (
-          <div class="group card bg-base-100 border border-base-300 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-            <div class="card-body p-8">
+          <div class="group card bg-base-100 border border-base-300 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+            <div class="card-body p-8 flex flex-col h-full">
               <div class="flex justify-between items-start mb-4">
                 <div class={`badge ${tool.badgeClass} badge-outline font-bold`}>
                   {tool.badge}
@@ -107,16 +125,46 @@ const tools = [
                 </div>
               </div>
 
-              <h3 class="card-title text-xl font-bold">{tool.title}</h3>
+              <div class="mb-6">
+                <h3 class="card-title text-xl font-bold mb-3">{tool.title}</h3>
+                <p class="text-sm text-base-content/70 leading-relaxed">
+                  {tool.description}
+                </p>
+              </div>
 
-              <ul class="mt-4 space-y-3">
+              <ul class="space-y-3  mt-auto">
                 {tool.features.map((feature) => (
                   <li class="flex items-center gap-3 text-sm opacity-80">
-                    <span class="h-1.5 w-1.5 rounded-full bg-success" />
+                    <span class="h-1.5 w-1.5 rounded-full bg-success shrink-0" />
                     {feature}
                   </li>
                 ))}
               </ul>
+
+              <div class="mt-4 border-t border-base-200">
+                <a
+                  href={tool.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link link-hover text-sm font-bold flex items-center gap-2 group/link opacity-60 hover:opacity-100 transition-opacity"
+                >
+                  Dokumentacja
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 transition-transform group-hover/link:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         ))

@@ -2,7 +2,7 @@
 const tools = [
   {
     badge: "Elements",
-    badgeClass: "badge-primary",
+    badgeClass: "badge-secondary",
     colorClass: "text-primary",
     iconAnimation: "group-hover:rotate-12 group-hover:scale-110",
     title: "HTML Inspector",
@@ -15,7 +15,7 @@ const tools = [
   {
     badge: "Styles",
     badgeClass: "badge-secondary",
-    colorClass: "text-secondary",
+    colorClass: "text-primary",
     iconAnimation: "group-hover:-rotate-12 group-hover:brightness-125",
     title: "CSS Debugger",
     description:
@@ -26,8 +26,8 @@ const tools = [
   },
   {
     badge: "Network",
-    badgeClass: "badge-accent",
-    colorClass: "text-accent",
+    badgeClass: "badge-secondary",
+    colorClass: "text-primary",
     iconAnimation: "group-hover:animate-pulse",
     title: "Network Analyzer",
     description:
@@ -38,7 +38,7 @@ const tools = [
   },
   {
     badge: "Overrides",
-    badgeClass: "badge-primary",
+    badgeClass: "badge-secondary",
     colorClass: "text-primary",
     iconAnimation: "group-hover:-translate-y-2",
     title: "Local Overrides",
@@ -51,7 +51,7 @@ const tools = [
   {
     badge: "Recorder",
     badgeClass: "badge-secondary",
-    colorClass: "text-secondary",
+    colorClass: "text-primary",
     isRecorder: true,
     title: "User Flow Recorder",
     description:
@@ -62,8 +62,8 @@ const tools = [
   },
   {
     badge: "Console",
-    badgeClass: "badge-accent",
-    colorClass: "text-accent",
+    badgeClass: "badge-secondary",
+    colorClass: "text-primary",
     iconAnimation: "animate-float-on-hover",
     title: "Advanced Debugger",
     description:
@@ -93,7 +93,7 @@ const tools = [
   }
 </style>
 
-<section class="py-24 bg-base-200/50">
+<section class="py-24 bg-base-200/50" id="tools">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">
@@ -150,17 +150,16 @@ const tools = [
                 >
                   Dokumentacja
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-4 w-4 transition-transform group-hover/link:translate-x-1"
+                    class="w-4 h-4 transition-transform"
                     fill="none"
-                    viewBox="0 0 24 24"
                     stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                     />
                   </svg>
                 </a>

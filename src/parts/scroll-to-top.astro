@@ -1,0 +1,65 @@
+---
+
+---
+
+<button
+  id="scroll-to-top"
+  aria-label="Scroll to top"
+  class="btn btn-primary btn-circle fixed bottom-8 right-8 z-50 shadow-2xl transition-all duration-500 translate-y-24 opacity-0 invisible"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="2.5"
+    stroke="currentColor"
+    class="w-6 h-6"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
+  </svg>
+</button>
+
+<script>
+  const setupScrollToTop = () => {
+    const button = document.getElementById("scroll-to-top");
+
+    if (!button) return;
+
+    const toggleVisible = () => {
+      // Show button after scrolling down 400px
+      if (window.scrollY > 400) {
+        button.classList.remove("translate-y-24", "opacity-0", "invisible");
+        button.classList.add("translate-y-0", "opacity-100", "visible");
+      } else {
+        button.classList.add("translate-y-24", "opacity-0", "invisible");
+        button.classList.remove("translate-y-0", "opacity-100", "visible");
+      }
+    };
+
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+
+    window.addEventListener("scroll", toggleVisible);
+    button.addEventListener("click", scrollToTop);
+  };
+
+  // Runs on initial load
+  setupScrollToTop();
+
+  // Runs on view transitions (if you use them)
+  document.addEventListener("astro:after-swap", setupScrollToTop);
+</script>
+
+<style>
+  /* Optional: adds a slight pulse effect when the user reaches the bottom */
+  #scroll-to-top:hover {
+    transform: scale(1.1);
+  }
+</style>

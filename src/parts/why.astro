@@ -1,24 +1,15 @@
 <section id="dlaczego" class="py-24 bg-white overflow-hidden text-slate-900">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex flex-col lg:flex-row gap-16 items-center">
-      <!-- Lewa kolumna - Główne korzyści -->
       <div class="lg:w-1/2">
-        <div
-          class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-6 uppercase tracking-wider"
-        >
-          Wartość dla biznesu
-        </div>
-
         <h2
           class="text-4xl md:text-5xl font-black mb-8 tracking-tight leading-tight"
         >
-          Przyspiesz<br />
-          <span class="text-primary">tworzenie oprogramowania.</span>
+          Zoptymalizuj proces<br />
+          <span class="text-primary">developmentu.</span>
         </h2>
 
-        <!-- Lista korzyści -->
         <div class="space-y-4">
-          <!-- Korzyść 1 -->
           <div
             class="group flex items-start gap-4 p-5 rounded-2xl border border-transparent hover:border-slate-200 hover:bg-slate-50 transition-all duration-300"
           >
@@ -40,16 +31,15 @@
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-lg mb-2">Krótsza implementacja</h3>
+              <h3 class="font-bold text-lg mb-2">Szybsze wykrywanie błędów</h3>
               <p class="text-sm text-slate-600 leading-relaxed">
-                Zwiększ przewidywalność dostarczania funkcjonalności. Zespół
-                identyfikuje i naprawia błędy podczas rozwoju, a nie po
-                wdrożeniu na produkcję.
+                Diagnozowanie i naprawianie błędów bezpośrednio w przeglądarce
+                skraca feedback loop. Rozwiązywanie problemów na etapie
+                developmentu drastycznie zmniejsza ryzyko regresji.
               </p>
             </div>
           </div>
 
-          <!-- Korzyść 2 -->
           <div
             class="group flex items-start gap-4 p-5 rounded-2xl border border-transparent hover:border-slate-200 hover:bg-slate-50 transition-all duration-300"
           >
@@ -72,127 +62,88 @@
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-lg mb-2">Mniejsze koszty regresji</h3>
+              <h3 class="font-bold text-lg mb-2">Wspólny język techniczny</h3>
               <p class="text-sm text-slate-600 leading-relaxed">
-                Zastąp ręczne testy automatycznymi audytami stanu aplikacji.
-                Mniej poprawek to bezpośrednia oszczędność czasu i budżetu.
+                DevTools tworzy płaszczyznę porozumienia między frontend-em,
+                backend-em a QA. Zamiast opisowych raportów, zespół operuje na
+                konkretnych logach i zrzutach stanu aplikacji, co eliminuje szum
+                komunikacyjny.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Prawa kolumna - Wizualizacje i metryki -->
       <div class="lg:w-1/2 w-full relative">
-        <!-- Dekoracja tła -->
         <div
           class="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 blur-3xl rounded-full"
         >
         </div>
 
         <div class="relative z-10 space-y-6">
-          <!-- Blok kodu -->
-          <!-- <div
-            class="mockup-code bg-[#1a1b26] text-sm shadow-2xl border border-white/5"
-          >
-            <pre
-              data-prefix="1"
-              class="text-slate-400"><code>// Optymalizacja procesu wytwórczego</code></pre>
-            <pre
-              data-prefix="2"
-              class="text-red-400"><code>- Średni czas naprawy (MTTR): Wysoki</code></pre>
-            <pre
-              data-prefix="3"
-              class="text-green-400"><code>+ Jakość inżynierska: Maksymalna</code></pre>
-            <pre
-              data-prefix="4"
-              class="bg-primary/10 text-yellow-300"><code>Zysk.wzrost(Efektywność * Kompetencje_Zespołu);</code></pre>
-          </div> -->
-
-          <!-- Kafelki z metrykami -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <!-- Kafelek 1 -->
             <div
               class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-primary transition-all"
             >
               <div
                 class="text-xs uppercase tracking-wider font-semibold mb-2 text-primary"
               >
-                Przewaga procesowa
+                Diagnostyka
               </div>
-              <h3 class="text-2xl font-bold mb-2">Samowystarczalność</h3>
+              <h3 class="text-2xl font-bold mb-2">Izolacja błędów</h3>
               <p class="text-sm text-slate-600">
-                Deweloperzy samodzielnie diagnozują błędy API/UI bez angażowania
-                innych zespołów.
+                Samodzielne odróżnianie problemów frontend-u od błędów po
+                stronie API lub infrastruktury.
               </p>
             </div>
 
-            <!-- Kafelek 2 -->
             <div
               class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-secondary transition-all"
             >
               <div
                 class="text-xs uppercase tracking-wider font-semibold mb-2 text-secondary"
               >
-                Wskaźnik jakości
+                Utrzymanie
               </div>
-              <h3 class="text-2xl font-bold mb-2">Redukcja MTTR</h3>
+              <h3 class="text-2xl font-bold mb-2">Niższy MTTR</h3>
               <p class="text-sm text-slate-600">
-                Znaczne skrócenie średniego czasu naprawy incydentów.
+                Skrócenie średniego czasu naprawy (Mean Time To Repair) dzięki
+                precyzyjnemu raportowaniu incydentów.
               </p>
             </div>
 
-            <!-- Kafelek 3 -->
             <div
               class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-blue-500 transition-all"
             >
               <div
                 class="text-xs uppercase tracking-wider font-semibold mb-2 text-blue-500"
               >
-                Efektywność
+                Optymalizacja
               </div>
-              <h3 class="text-2xl font-bold mb-2">Decyzje oparte na danych</h3>
+              <h3 class="text-2xl font-bold mb-2">Core Web Vitals</h3>
               <p class="text-sm text-slate-600">
-                Wybory techniczne oparte na faktach, a nie na przypuszczeniach.
+                Podejmowanie decyzji o optymalizacji w oparciu o realne
+                parametry wydajnościowe i audyty Lighthouse.
               </p>
             </div>
 
-            <!-- Kafelek 4 -->
             <div
               class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-emerald-500 transition-all"
             >
               <div
                 class="text-xs uppercase tracking-wider font-semibold mb-2 text-emerald-500"
               >
-                Inwestycja w zespół
+                Wiedza
               </div>
-              <h3 class="text-2xl font-bold mb-2">Wzrost kompetencji</h3>
+              <h3 class="text-2xl font-bold mb-2">Standardy Web</h3>
               <p class="text-sm text-slate-600">
-                Rozwój umiejętności technicznych bez dodatkowych narzędzi.
+                Głębsze zrozumienie protokołów sieciowych, mechanizmów
+                renderowania i działania silników przeglądarek.
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Baner gwarancji (można odkomentować gdy potrzebny) -->
-    <!--
-    <div class="mt-16 max-w-4xl mx-auto p-8 rounded-3xl bg-slate-900 text-white shadow-xl">
-      <div class="flex flex-col md:flex-row gap-6 items-center">
-        <div class="shrink-0 p-4 bg-white/10 rounded-2xl">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold mb-2 text-blue-400">Gwarancja efektów</h3>
-          <p class="text-white/90 leading-relaxed">
-            Zapewniamy, że wdrożenie naszych rozwiązań przyniesie mierzalne korzyści już w pierwszym cyklu produkcyjnym. W przypadku braku efektów zwracamy 100% inwestycji.
-          </p>
-        </div>
-      </div>
-    </div>
-    -->
   </div>
 </section>

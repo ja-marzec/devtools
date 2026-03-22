@@ -1,15 +1,46 @@
 ---
 import "../styles/global.css";
+
+const title = "DevTools Master!";
+const description =
+  "Learn DevTools, debugging, and modern web development tips.";
+const url = "https://devtools-proj.netlify.app/";
+const image = "https://devtools-proj.netlify.app/background.svg";
 ---
 
 <!doctype html>
 <html lang="pl" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon2.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon2.ico" />
+
+    <!-- Basic SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph (Facebook, LinkedIn, Discord, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="pl_PL" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Optional extras -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="DevTools Master" />
+
     <meta name="generator" content={Astro.generator} />
-    <title>DevTools Master!</title>
   </head>
   <body>
     <slot />
